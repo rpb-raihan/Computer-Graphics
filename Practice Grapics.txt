@@ -1,0 +1,2551 @@
+                             **********************************Raihan Parvez********************************
+
+
+
+
+
+..............................................Squre.........................................
+#include<windows.h>
+
+#include<GL/glut.h>
+
+void initGL()
+{
+    glClearColor(1.0,1.0,1.0,1.0);
+}
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(0.0,0.0,0.0);
+
+    glBegin(GL_LINES);
+    glVertex2f( 0.0,0.0);
+     glVertex2f(5.0,0.0);
+
+      glVertex2f(5.0,0.0);
+     glVertex2f(5.0,3.0);
+
+        glVertex2f(5.0,3.0);
+      glVertex2f(0.0,3.0);
+
+         glVertex2f(0.0,3.0);
+    glVertex2f( 0.0,0.0);
+
+     glEnd();
+     glFlush();
+}
+
+int main(int argc, char **argv)
+{
+ glutInit(&argc,argv);
+ glutCreateWindow("01LAB");
+ glutInitWindowSize(320,320);
+ glutInitWindowPosition(50,50);
+ glutDisplayFunc (display);
+ gluOrtho2D(-20,20,-20,20);
+ initGL();
+ glutMainLoop();
+ return 0;
+
+}
+
+........................................PolyGon.......................................
+
+#include<windows.h>
+
+#include<GL/glut.h>
+
+void initGL()
+{
+    glClearColor(1.0,1.0,1.0,1.0);
+}
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(1.0,0.0,0.0);
+
+    glBegin(GL_POLYGON);
+    glVertex2f( -16.0,-14.0);
+   //glVertex2f(5.0,0.0);
+
+ //   glVertex2f(5.0,0.0);
+     glVertex2f(16.0,-14.0);
+
+//      glVertex2f(5.0,3.0);
+      glVertex2f(14.0,14.0);
+
+ //      glVertex2f(0.0,3.0);
+    glVertex2f( -14.0,14.0);
+
+     glEnd();
+     glFlush();
+}
+
+int main(int argc, char **argv)
+{
+ glutInit(&argc,argv);
+ glutCreateWindow("01LAB");
+ glutInitWindowSize(320,320);
+ glutInitWindowPosition(50,50);
+ glutDisplayFunc (display);
+ gluOrtho2D(-20,20,-20,20);
+ initGL();
+ glutMainLoop();
+ return 0;
+
+}
+
+...................................Color Square...........................................
+
+#include<GL/glut.h>
+
+void initGL()
+{
+    glClearColor(1.0,1.0,1.0,1.0);
+}
+void display()
+{
+     glClear(GL_COLOR_BUFFER_BIT); // Clear the screen
+
+    // Set the drawing color to red
+    glColor3f(1.0, 0.0, 0.0);
+
+    // Draw a filled square
+    glBegin(GL_QUADS);
+    glVertex2f(-0.5, -0.5); // Bottom-left vertex
+    glVertex2f(0.5, -0.5);  // Bottom-right vertex
+    glVertex2f(0.5, 0.5);   // Top-right vertex
+    glVertex2f(-0.5, 0.5);  // Top-left vertex
+    glEnd();
+
+    glFlush();
+    glutSwapBuffers();
+     glFlush();
+}
+
+int main(int argc, char **argv)
+{
+ glutInit(&argc,argv);
+ glutCreateWindow("01LAB");
+ glutInitWindowSize(320,320);
+ glutInitWindowPosition(50,50);
+ glutDisplayFunc (display);
+ gluOrtho2D(-20,20,-20,20);
+ initGL();
+ glutMainLoop();
+ return 0;
+
+}
+
+
+............................................Rectangle.........................................
+#include<windows.h>
+
+#include<GL/glut.h>
+
+void initGL()
+{
+    glClearColor(1.0,1.0,1.0,1.0);
+}
+void display()
+{
+    glBegin(GL_TRIANGLES);
+
+
+    glColor3f( 1, 0, 0 ); // red
+    glVertex2f( -5.0, -5.0 );
+    glColor3f( 0, 1, 0 ); // green
+    glVertex2f( 5.0, -5.0 );
+    glColor3f( 0, 0, 1 ); // blue
+    glVertex2f( 0, 9.0 );
+    glEnd();
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc,argv);
+    glutCreateWindow("01LAB");
+    glutInitWindowSize(320,320);
+    glutInitWindowPosition(50,50);
+    glutDisplayFunc (display);
+    gluOrtho2D(-20,20,-20,20);
+    initGL();
+    glutMainLoop();
+    return 0;
+
+}
+..................................................... ANGLE Rectangle.........................................
+
+#include<windows.h>
+#include<GL/glut.h>
+
+void initGL()
+{
+    glClearColor(1.0,1.0,1.0,1.0);
+}
+void display()
+{
+     glBegin(GL_TRIANGLES);
+
+
+     glColor3f( 0, 1, 0 );
+    glVertex2f( -10.0, -10.0 );
+    glColor3f( 0, 1, 0 );
+    glVertex2f( 5.0, -5.0 );
+   glColor3f( 0, 1, 0 );
+       glVertex2f( -5.0, -5.0);
+    glEnd();
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+ glutInit(&argc,argv);
+ glutCreateWindow("01LAB");
+ glutInitWindowSize(320,320);
+ glutInitWindowPosition(50,50);
+ glutDisplayFunc (display);
+ gluOrtho2D(-20,20,-20,20);
+ initGL();
+ glutMainLoop();
+ return 0;
+
+}
+
+........................Full Lab 01 task...............................
+
+#include <windows.h>
+#include <GL/glut.h> 
+
+ /*   void Axis(){
+
+    glBegin(GL_LINES);
+
+	glColor3f(0.0f, 0.0f, 0.0f); // Black color
+	glVertex2f(-16.0, 0.0);
+	glVertex2f(16.0, 0.0);
+	glVertex2f(0.0, 16.0);
+	glVertex2f(0.0, -16.0);
+
+	glEnd();
+
+}     */
+
+void Rectangle(){
+
+    glBegin(GL_POLYGON);
+
+	glColor3f(1.0f, 0.0f, 0.0f);
+
+	glVertex2f(-12.0, 4.0);
+	glVertex2f(-4.0, 4.0);
+	glVertex2f(-4.0, 12.0);
+	glVertex2f(-12.0, 12.0);
+
+	glEnd();
+}
+
+void Triangle1(){
+
+    glBegin(GL_POLYGON);
+
+	glColor3ub(127, 0.0, 255);
+
+	glVertex2f(-4.0, -12.0);
+	glVertex2f(-4.0, -4.0);
+	glVertex2f(-12.0,-8.0);
+
+	glEnd();
+
+}
+
+void Triangle2(){
+
+    glBegin(GL_POLYGON);
+
+	glColor3ub(255, 255, 0);
+
+	glVertex2f(4.0, -9.0);
+	glVertex2f(12.0, -9.0);
+	glVertex2f(8.0,-4.0);
+
+	glEnd();
+
+}
+
+void Arrow(){
+
+    glBegin(GL_POLYGON);
+
+	glColor3ub(0, 153, 0);
+
+	glVertex2f(4.0, 7.0);
+	glVertex2f(12.0, 7.0);
+	glVertex2f(12.0, 9.0);
+	glVertex2f(4.0, 9.0);
+
+	glEnd();
+
+
+    glBegin(GL_POLYGON);
+
+	glColor3ub(0, 153, 0);
+
+	glVertex2f(12.0, 5.0);
+	glVertex2f(16.0, 8.0);
+	glVertex2f(12.0, 11.0);
+
+	glEnd();
+
+}
+
+void display() {
+	glClearColor(1.0, 1.0, 1.0, 1.0); // Set background color to black and opaque
+	glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
+
+
+  //  Axis();
+    Rectangle();
+    Triangle1();
+    Triangle2();
+    Arrow();
+
+	glFlush();
+}
+
+/* Main function: GLUT runs as a console application starting at main()  */
+int main(int argc, char** argv) {
+	glutInit(&argc, argv);                 // Initialize GLUT
+	glutCreateWindow("OpenGL Setup Test"); // Create a window with the given title
+	glutInitWindowSize(320, 320);   // Set the window's initial width & height
+	glutDisplayFunc(display); // Register display callback handler for window re-paint
+	gluOrtho2D(-20,20,-20,20);
+	glutMainLoop();           // Enter the event-processing loop
+
+	return 0; 
+}
+
+
+***************************************RainBow****************************************
+
+
+
+#include <windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+void display() {
+
+    glClear(GL_COLOR_BUFFER_BIT);
+    glClearColor(1.0, 0.0, 0.0, 0.0);
+    glBegin(GL_POLYGON);
+
+    glColor3ub(171.0, 110.0, 247.0);
+    glVertex2f(-0.5, -0.4);
+    glVertex2f(0.5, -0.4);
+    glVertex2f(0.5, 0.4);
+    glVertex2f(-0.5, 0.4);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+
+    glColor3ub(14.0, 100.0, 243.0);
+    glVertex2f(-0.5, -0.4);
+    glVertex2f(0.5, -0.4);
+    glVertex2f(0.5, 0.3);
+    glVertex2f(-0.5, 0.3);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(14.0, 227.0, 243.0);
+    glVertex2f(-0.5, -0.4);
+    glVertex2f(0.5, -0.4);
+    glVertex2f(0.5, 0.2);
+    glVertex2f(-0.5, 0.2);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(55.0, 127.0, 24.0);
+    glVertex2f(-0.5, -0.4);
+    glVertex2f(0.5, -0.4);
+    glVertex2f(0.5, 0.1);
+    glVertex2f(-0.5, 0.1);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(231.0, 149.0, 32.0);
+    glVertex2f(-0.5, -0.4);
+    glVertex2f(0.5, -0.4);
+    glVertex2f(0.5, 0.0);
+    glVertex2f(-0.5, 0.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(241.0, 241.0, 22.0);
+    glVertex2f(-0.5, -0.4);
+    glVertex2f(0.5, -0.4);
+    glVertex2f(0.5, -0.1);
+    glVertex2f(-0.5, -0.1);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(243.0, 55.0, 14.0);
+    glVertex2f(-0.5, -0.4);
+    glVertex2f(0.5, -0.4);
+    glVertex2f(0.5, -0.2);
+    glVertex2f(-0.5, -0.2);
+    glEnd();
+
+     glBegin(GL_POLYGON);
+    glColor3ub(255.0, 255.0, 255.0);
+    glVertex2f(-0.5, -0.4);
+    glVertex2f(0.5, -0.4);
+    glVertex2f(0.5, -0.3);
+    glVertex2f(-0.5, -0.3);
+    glEnd();
+
+
+    glFlush();
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+    glutCreateWindow("OpenGL Trapezium");
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+
+}
+
+***********************************CHesss board 4/4******************************************
+
+
+
+#include <windows.h>  
+#include <GL/glut.h>  
+
+
+
+void _chessPanel() {
+    glColor3ub(0, 0, 0);
+    glBegin(GL_LINES);
+
+    glVertex2f(-2.0, -2.0);glVertex2f(2.0, -2.0);
+    glVertex2f(2.0, -2.0);glVertex2f(2.0, 2.0);
+    glVertex2f(2.0, 2.0);glVertex2f(-2.0, 2.0);
+    glVertex2f(-2.0, 2.0);glVertex2f(-2.0, -2.0);
+
+    glEnd();
+}
+
+
+void _blackShades() {
+    //col 1 black
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+
+    glVertex2f(-2.0, 1.0);glVertex2f(-1.0, 1.0);
+    glVertex2f(-1.0, 1.0);glVertex2f(-1.0, 2.0);
+    glVertex2f(-1.0, 2.0);glVertex2f(-2.0, 2.0);
+    glVertex2f(-2.0, 2.0);glVertex2f(-2.0, -1.0);
+
+    glEnd();
+
+
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+
+    glVertex2f(-2.0, -1.0);glVertex2f(-1.0, -1.0);
+    glVertex2f(-1.0, -1.0);glVertex2f(-1.0, 0.0);
+    glVertex2f(-1.0, 0.0);glVertex2f(-2.0, 0.0);
+    glVertex2f(-2.0, 0.0);glVertex2f(-2.0, -1.0);
+
+    glEnd();
+
+
+    //col 3 black
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+
+    glVertex2f(-2.0+2, 1.0);glVertex2f(-1.0+2, 1.0);
+    glVertex2f(-1.0+2, 1.0);glVertex2f(-1.0+2, 2.0);
+    glVertex2f(-1.0+2, 2.0);glVertex2f(-2.0+2, 2.0);
+    glVertex2f(-2.0+2, 2.0);glVertex2f(-2.0+2, -1.0);
+
+    glEnd();
+
+
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+
+    glVertex2f(-2.0+2, -1.0);glVertex2f(-1.0+2, -1.0);
+    glVertex2f(-1.0+2, -1.0);glVertex2f(-1.0+2, 0.0);
+    glVertex2f(-1.0+2, 0.0);glVertex2f(-2.0+2, 0.0);
+    glVertex2f(-2.0+2, 0.0);glVertex2f(-2.0+2, -1.0);
+
+    glEnd();
+
+
+    //col 2 black
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+
+    glVertex2f(-2.0+1, 1.0-1);glVertex2f(-1.0+1, 1.0-1);
+    glVertex2f(-1.0+1, 1.0-1);glVertex2f(-1.0+1, 2.0-1);
+    glVertex2f(-1.0+1, 2.0-1);glVertex2f(-2.0+1, 2.0-1);
+    glVertex2f(-2.0+1, 2.0-1);glVertex2f(-2.0+1, -1.0-1);
+
+    glEnd();
+
+
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+
+    glVertex2f(-2.0+1, -1.0-1);glVertex2f(-1.0+1, -1.0-1);
+    glVertex2f(-1.0+1, -1.0-1);glVertex2f(-1.0+1, 0.0-1);
+    glVertex2f(-1.0+1, 0.0-1);glVertex2f(-2.0+1, 0.0-1);
+    glVertex2f(-2.0+1, 0.0-1);glVertex2f(-2.0+1, -1.0-1);
+
+    glEnd();
+
+
+
+    //col 4 black
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+
+    glVertex2f(-2.0+1+2, 1.0-1);glVertex2f(-1.0+1+2, 1.0-1);
+    glVertex2f(-1.0+1+2, 1.0-1);glVertex2f(-1.0+1+2, 2.0-1);
+    glVertex2f(-1.0+1+2, 2.0-1);glVertex2f(-2.0+1+2, 2.0-1);
+    glVertex2f(-2.0+1+2, 2.0-1);glVertex2f(-2.0+1+2, -1.0-1);
+
+    glEnd();
+
+
+    glColor3ub(0,0,0);
+    glBegin(GL_POLYGON);
+
+    glVertex2f(-2.0+1+2, -1.0-1);glVertex2f(-1.0+1+2, -1.0-1);
+    glVertex2f(-1.0+1+2, -1.0-1);glVertex2f(-1.0+1+2, 0.0-1);
+    glVertex2f(-1.0+1+2, 0.0-1);glVertex2f(-2.0+1+2, 0.0-1);
+    glVertex2f(-2.0+1+2, 0.0-1);glVertex2f(-2.0+1+2, -1.0-1);
+
+    glEnd();
+}
+
+
+
+void display() {
+	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+
+    _chessPanel();
+    _blackShades();
+	glFlush();
+}
+
+
+int main(int argc, char** argv) {
+	glutInit(&argc, argv);
+
+	glutInitWindowSize(600, 600);
+	glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH)-600)/2,(glutGet(GLUT_SCREEN_HEIGHT)-600)/2);;
+	glutCreateWindow("Lab Task - 2");
+
+    //this line must be below of glutCreateWindow();
+    gluOrtho2D(-10, 10, -10, 10);
+	glutDisplayFunc(display);
+
+	glutMainLoop();
+	return 0;
+}
+
+
+*********************************Batman*********************************
+
+#include<windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+void Batman()
+{
+
+
+
+    glColor3f(1.0,1.0,1.0);
+    glBegin(GL_LINES);
+
+
+    glVertex2f(-8.0,-0.0);
+    glVertex2f(-4.0,-0.0);
+    glVertex2f(-4.0,-0.0);
+    glVertex2f(-0.0,-4.0);
+    glVertex2f(-0.0,-4.0);
+    glVertex2f(4.0,0.0);
+    glVertex2f(4.0,0.0);
+    glVertex2f(8.0,0.0);
+    glVertex2f(8.0,0.0);
+    glVertex2f(12.0,4.0);
+    glVertex2f(12.0,4.0);
+    glVertex2f(7.0,9.0);
+    glVertex2f(7.0,9.0);
+    glVertex2f(7.0,5.0);
+    glVertex2f(7.0,5.0);
+    glVertex2f(2.0,5.0);
+    glVertex2f(2.0,5.0);
+    glVertex2f(2.0,9.0);
+    glVertex2f(2.0,9.0);
+    glVertex2f(1.0,7.0);
+    glVertex2f(1.0,7.0);
+    glVertex2f(-1.0,7.0);
+    glVertex2f(-1.0,7.0);
+    glVertex2f(-2.0,9.0);
+    glVertex2f(-2.0,9.0);
+    glVertex2f(-2.0,5.0);
+    glVertex2f(-2.0,5.0);
+    glVertex2f(-7.0,5.0);
+    glVertex2f(-7.0,5.0);
+    glVertex2f(-7.0,9.0);
+    glVertex2f(-7.0,9.0);
+    glVertex2f(-12.0,4.0);
+    glVertex2f(-12.0,4.0);
+    glVertex2f(-8.0,-0.0);
+
+
+
+    glEnd();
+
+
+
+
+
+}
+
+
+
+void display()
+{
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    Batman();
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutCreateWindow("OpenGL Setup Test");
+    glutInitWindowSize(520, 520);
+    gluOrtho2D(-20,20,-20,20);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
+
+
+*********************************LampPost**********************
+#include<windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+void home()
+{
+
+
+
+    //lamp body
+    glBegin(GL_POLYGON);
+    glColor3ub(247, 240, 148 );
+
+    glVertex2f(2.0,-8.0);
+    glVertex2f(4.0,-8.0);
+    glVertex2f(4.0,12.0);
+    glVertex2f(2.0,12.0);
+    glEnd();
+
+    //lamp Head
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(247, 240, 148 );
+
+    glVertex2f(-1.0,20.0);
+    glVertex2f(7.0,20.0);
+    glVertex2f(3.0,26.0);
+
+    glEnd();
+
+    //LAmp Box
+    glBegin(GL_POLYGON);
+    glColor3ub(247, 240, 148);
+
+    glVertex2f(-1.0,12.0);
+    glVertex2f(7.0,12.0);
+    glVertex2f(7.0,20.0);
+    glVertex2f(-1.0,20.0);
+    glEnd();
+
+    //Lamp Indie box
+    glBegin(GL_POLYGON);
+    glColor3ub(255, 189, 0 );
+
+    glVertex2f(1.0,12.0);
+    glVertex2f(5.0,12.0);
+    glVertex2f(5.0,20.0);
+    glVertex2f(1.0,20.0);
+    glEnd();
+
+
+
+}
+
+
+
+void display()
+{
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    home();
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutCreateWindow("OpenGL Setup Test");
+    glutInitWindowSize(520, 520);
+    gluOrtho2D(-20,20,-20,20);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
+
+
+**************************************Tree*********************************
+
+#include<windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+void home()
+{
+
+
+
+   //tree body
+    glBegin(GL_POLYGON);
+    glColor3ub(88, 24, 69);
+
+    glVertex2f(-2.0,-6.0);
+    glVertex2f(2.0,-6.0);
+    glVertex2f(2.0,10.0);
+    glVertex2f(-2.0,10.0);
+    glEnd();
+
+    //tree Head
+
+     glBegin(GL_TRIANGLES);
+    glColor3ub(1, 196, 66 );
+
+    glVertex2f(-7.0,10.0);
+    glVertex2f(7.0,10.0);
+    glVertex2f(0.0,20.0);
+
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(27, 255, 3  );
+
+    glVertex2f(-5.0,16.0);
+    glVertex2f(5.0,16.0);
+    glVertex2f(0.0,22.0);
+
+    glEnd();
+}
+void display()
+{
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    home();
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutCreateWindow("OpenGL Setup Test");
+    glutInitWindowSize(520, 520);
+    gluOrtho2D(-20,20,-20,20);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
+
+*********************************Home******************************
+
+#include<windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+void home()
+{
+
+
+
+    //Home body
+    glBegin(GL_POLYGON);
+    glColor3ub(0, 193, 255 );
+
+    glVertex2f(-12.0,-16.0);
+    glVertex2f(16.0,-16.0);
+    glVertex2f(16.0,20.0);
+    glVertex2f(-12.0,20.0);
+
+    glEnd();
+
+    //Door
+    glBegin(GL_POLYGON);
+    glColor3ub(255, 195, 0  );
+
+    glVertex2f(-1.0,-16.0);
+    glVertex2f(6.0,-16.0);
+    glVertex2f(6.0,-8.0);
+    glVertex2f(-1.0,-8.0);
+
+    glEnd();
+
+// First Floor windows
+    glBegin(GL_POLYGON);
+    glColor3ub(218, 247, 166 );
+
+    glVertex2f(-11.0,-12.0);
+    glVertex2f(-6.0,-12.0);
+    glVertex2f(-6.0,-7.0);
+    glVertex2f(-11.0,-7.0);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(218, 247, 166 );
+
+    glVertex2f(10.0,-12.0);
+    glVertex2f(15.0,-12.0);
+    glVertex2f(15.0,-7.0);
+    glVertex2f(10.0,-7.0);
+
+    glEnd();
+//2nd Floor
+    glBegin(GL_POLYGON);
+    glColor3ub(116, 0, 255   );
+
+    glVertex2f(-11.0,-6.0);
+    glVertex2f(-6.0,-6.0);
+    glVertex2f(-6.0,-0.0);
+    glVertex2f(-11.0,-0.0);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(116, 0, 255   );
+
+    glVertex2f(10.0,-6.0);
+    glVertex2f(15.0,-6.0);
+    glVertex2f(15.0,-0.0);
+    glVertex2f(10.0,-0.0);
+
+    glEnd();
+
+    //3rd floor
+    glBegin(GL_POLYGON);
+    glColor3ub(218, 247, 166 );
+
+    glVertex2f(-11.0,1.0);
+    glVertex2f(-6.0,1.0);
+    glVertex2f(-6.0,6.0);
+    glVertex2f(-11.0,6.0);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(218, 247, 166 );
+
+    glVertex2f(10.0,1.0);
+    glVertex2f(15.0,1.0);
+    glVertex2f(15.0,6.0);
+    glVertex2f(10.0,6.0);
+
+    glEnd();
+
+    //Forth Floor
+
+    glBegin(GL_POLYGON);
+    glColor3ub(116, 0, 255  );
+
+    glVertex2f(-11.0,8.0);
+    glVertex2f(-6.0,8.0);
+    glVertex2f(-6.0,13.0);
+    glVertex2f(-11.0,13.0);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(116, 0, 255  );
+
+    glVertex2f(10.0,8.0);
+    glVertex2f(15.0,8.0);
+    glVertex2f(15.0,13.0);
+    glVertex2f(10.0,13.0);
+
+    glEnd();
+
+    //5th floor
+
+    glBegin(GL_POLYGON);
+    glColor3ub(218, 247, 166  );
+
+    glVertex2f(-11.0,15.0);
+    glVertex2f(-6.0,15.0);
+    glVertex2f(-6.0,20.0);
+    glVertex2f(-11.0,20.0);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(218, 247, 166 );
+
+    glVertex2f(10.0,15.0);
+    glVertex2f(15.0,15.0);
+    glVertex2f(15.0,20.0);
+    glVertex2f(10.0,20.0);
+
+    glEnd();
+}
+void display()
+{
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    home();
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutCreateWindow("OpenGL Setup Test");
+
+    glutInitWindowSize(1000, 900);
+
+    gluOrtho2D(-20,20,-20,20);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
+
+**********************Bench***************************8
+
+
+#include<windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+void Bench()
+{
+
+
+
+    //bench upper part
+    glBegin(GL_POLYGON);
+    glColor3ub(113, 79, 21  );
+
+    glVertex2f(-4.0,0.0);
+    glVertex2f(16.0,0.0);
+    glVertex2f(10.0,6.0);
+    glVertex2f(-10.0,6.0);
+    glEnd();
+
+    //Bench Side part
+    glBegin(GL_POLYGON);
+    glColor3ub(255, 162, 0  );
+
+    glVertex2f(-10.0,3.0);
+    glVertex2f(-4.0,-4.0);
+    glVertex2f(-4.0,0.0);
+    glVertex2f(-10.0,6.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255, 162, 0  );
+
+    glVertex2f(-4.0,-4.0);
+    glVertex2f(16.0,-4.0);
+    glVertex2f(16.0,0.0);
+    glVertex2f(-4.0,0.0);
+    glEnd();
+
+    //bench legs
+    //1st leg
+    glBegin(GL_POLYGON);
+    glColor3ub(255, 81, 0  );
+
+    glVertex2f(-10.0,-4.0);
+    glVertex2f(-9.0,-4.0);
+    glVertex2f(-9.0,1.0);
+    glVertex2f(-10.0,3.0);
+    glEnd();
+    // second leg
+     glBegin(GL_POLYGON);
+    glColor3ub(255, 81, 0 );
+
+    glVertex2f(-5.0,-8.0);
+    glVertex2f(-4.0,-8.0);
+    glVertex2f(-4.0,-4.0);
+    glVertex2f(-5.0,-3.0);
+    glEnd();
+
+    //3rd leg
+     glBegin(GL_POLYGON);
+    glColor3ub(255, 81, 0 );
+
+    glVertex2f(15.0,-8.0);
+    glVertex2f(16.0,-8.0);
+    glVertex2f(16.0,-4.0);
+    glVertex2f(15.0,-4.0);
+    glEnd();
+    //lines
+     glBegin(GL_LINES);
+    glColor3ub(211, 211, 211);
+
+    glVertex2f(-10.0,6.0);
+    glVertex2f(-10.0,13.0);
+
+    glVertex2f(-4.0,6.0);
+    glVertex2f(-4.0,13.0);
+
+    glVertex2f(4.0,6.0);
+    glVertex2f(4.0,13.0);
+
+    glVertex2f(-10.0,13.0);
+    glVertex2f(10.0,13.0);
+
+    glVertex2f(10.0,6.0);
+    glVertex2f(10.0,13.0);
+    glEnd();
+
+
+
+
+
+}
+
+
+
+void display()
+{
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    Bench();
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutCreateWindow("OpenGL Setup Test");
+    glutInitWindowSize(1000, 900);
+    gluOrtho2D(-20,20,-20,20);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
+
+*****************************House ,Tree,LampPost,Banch*******************
+#include<windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+//Home
+void Home()
+{
+
+    //Home body
+    glBegin(GL_POLYGON);
+    glColor3ub(218, 247, 166  );
+
+    glVertex2f(-8.0,-7.0);
+    glVertex2f(6.0,-7.0);
+    glVertex2f(6.0,16.0);
+    glVertex2f(-8.0,16.0);
+
+    glEnd();
+
+    //Door
+    glBegin(GL_POLYGON);
+    glColor3ub(255, 195, 0  );
+
+    glVertex2f(-2.0,-7.0);
+    glVertex2f(1.0,-7.0);
+    glVertex2f(1.0,-0.0);
+    glVertex2f(-2.0,-0.0);
+
+    glEnd();
+
+// First Floor windows
+    glBegin(GL_POLYGON);
+    glColor3ub(178, 150, 150  );
+
+    glVertex2f(-8.0,-3.0);
+    glVertex2f(-4.0,-3.0);
+    glVertex2f(-4.0,-0.0);
+    glVertex2f(-8.0,-0.0);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(178, 150, 150  );
+
+    glVertex2f(2.0,-3.0);
+    glVertex2f(6.0,-3.0);
+    glVertex2f(6.0,-0.0);
+    glVertex2f(2.0,-0.0);
+
+    glEnd();
+//2nd Floor
+    glBegin(GL_POLYGON);
+    glColor3ub(249, 95, 95   );
+
+    glVertex2f(-8.0,1.0);
+    glVertex2f(-4.0,1.0);
+    glVertex2f(-4.0,4.0);
+    glVertex2f(-8.0,4.0);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(249, 95, 95    );
+
+    glVertex2f(2.0,1.0);
+    glVertex2f(6.0,1.0);
+    glVertex2f(6.0,4.0);
+    glVertex2f(2.0,4.0);
+
+    glEnd();
+
+    //3rd floor
+    glBegin(GL_POLYGON);
+    glColor3ub(178, 150, 150  );
+
+    glVertex2f(-8.0,6.0);
+    glVertex2f(-4.0,6.0);
+    glVertex2f(-4.0,8.0);
+    glVertex2f(-8.0,8.0);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(178, 150, 150  );
+
+    glVertex2f(2.0,6.0);
+    glVertex2f(6.0,6.0);
+    glVertex2f(6.0,8.0);
+    glVertex2f(2.0,8.0);
+
+    glEnd();
+
+    //Forth Floor
+
+    glBegin(GL_POLYGON);
+    glColor3ub(249, 95, 95   );
+
+    glVertex2f(-8.0,10.0);
+    glVertex2f(-4.0,10.0);
+    glVertex2f(-4.0,12.0);
+    glVertex2f(-8.0,12.0);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(249, 95, 95  );
+
+    glVertex2f(2.0,10.0);
+    glVertex2f(6.0,10.0);
+    glVertex2f(6.0,12.0);
+    glVertex2f(2.0,12.0);
+
+    glEnd();
+
+    //5th floor
+
+    glBegin(GL_POLYGON);
+    glColor3ub(178, 150, 150  );
+
+    glVertex2f(-8.0,14.0);
+    glVertex2f(-4.0,14.0);
+    glVertex2f(-4.0,16.0);
+    glVertex2f(-8.0,16.0);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(178, 150, 150  );
+
+    glVertex2f(2.0,14.0);
+    glVertex2f(6.0,14.0);
+    glVertex2f(6.0,16.0);
+    glVertex2f(2.0,16.0);
+
+    glEnd();
+
+}
+
+//Tree
+void Tree()
+{
+
+
+
+    //tree body
+    glBegin(GL_POLYGON);
+    glColor3ub(137, 58, 0);
+
+    glVertex2f(11.0,-8.0);
+    glVertex2f(13.0,-8.0);
+    glVertex2f(13.0,2.0);
+    glVertex2f(11.0,2.0);
+    glEnd();
+
+    //tree Head
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(28, 140, 0 );
+
+    glVertex2f(6.0,2.0);
+    glVertex2f(20.0,2.0);
+    glVertex2f(12.0,10.0);
+
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(50, 255, 0   );
+
+    glVertex2f(8.0,7.0);
+    glVertex2f(16.0,7.0);
+    glVertex2f(12.0,13.0);
+
+    glEnd();
+}
+
+//LampPost
+
+void LampPost()
+{
+
+
+
+    //lamp body
+    glBegin(GL_POLYGON);
+    glColor3ub(246, 247, 239   );
+
+    glVertex2f(-11.0,-8.0);
+    glVertex2f(-9.0,-8.0);
+    glVertex2f(-9.0,6.0);
+    glVertex2f(-11.0,6.0);
+    glEnd();
+
+    //lamp head
+    glBegin(GL_TRIANGLES);
+    glColor3ub(246, 247, 239  );
+
+    glVertex2f(-12.0,11.0);
+    glVertex2f(-8.0,11.0);
+    glVertex2f(-11.0,12.0);
+
+    glEnd();
+
+
+
+
+    //Lamp Light
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 218, 67  );
+
+    glVertex2f(-11.0,6.0);
+    glVertex2f(-9.0,6.0);
+    glVertex2f(-9.0,11.0);
+    glVertex2f(-11.0,11.0);
+    glEnd();
+
+}
+
+//Road
+void Road()
+{
+    glBegin(GL_POLYGON);
+    glColor3ub(222, 223, 218 );
+
+    glVertex2f(-16.0,-12.0);
+    glVertex2f(23.0,-12.0);
+    glVertex2f(23.0,-6.0);
+    glVertex2f(-16.0,-6.0);
+    glEnd();
+}
+
+
+//Banch*******
+
+void Bench()
+{
+    //upper side
+    glBegin(GL_POLYGON);
+    glColor3ub(213, 163, 147  );
+
+    glVertex2f(14.0,-4.0);
+    glVertex2f(22.0,-4.0);
+    glVertex2f(22.0,-2.0);
+    glVertex2f(14.0,-2.0);
+    glEnd();
+
+    //Leges
+    glBegin(GL_POLYGON);
+    glColor3ub(209, 84, 126);
+
+    glVertex2f(14.0,-8.0);
+    glVertex2f(15.0,-8.0);
+    glVertex2f(15.0,-4.0);
+    glVertex2f(14.0,-4.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(209, 84, 126 );
+
+    glVertex2f(19.0,-8.0);
+    glVertex2f(20.0,-8.0);
+    glVertex2f(20.0,-4.0);
+    glVertex2f(19.0,-4.0);
+    glEnd();
+
+    /*
+
+    //upper lines
+
+    glColor3f(1.0,1.0,1.0);
+    glBegin(GL_LINES);
+
+    glVertex2f(14.0,-4.0);
+    glVertex2f(14.0,-2.0);
+
+    glVertex2f(14.0,-2.0);
+    glVertex2f(22.0,-2.0);
+
+     glVertex2f(22.0,-2.0);
+      glVertex2f(22.0,-4.0);
+
+    glEnd();  */
+
+
+
+}
+
+
+
+
+
+
+
+
+void display()
+{
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    Home();
+    Tree();
+    LampPost();
+    Road();
+    Bench();
+
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutCreateWindow("OpenGL Setup Test");
+    glutInitWindowSize(1000, 900);
+    gluOrtho2D(-20,20,-20,20);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
+
+
+/*******************************************Traffic Light With road******************************/
+
+#include<windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+void Traffic()
+{
+
+
+
+    //**************Road*******************8
+    glBegin(GL_POLYGON);
+    glColor3ub(195, 194, 194);
+
+    glVertex2f(-20.0,-8.0);
+    glVertex2f(20.0,-8.0);
+    glVertex2f(20.0,4.0);
+    glVertex2f(-20.0,4.0);
+    glEnd();
+
+
+    //**************Stand*******************8
+    glBegin(GL_POLYGON);
+    glColor3ub(252, 149, 183);
+
+    glVertex2f(-10.0,4.0);
+    glVertex2f(-9.0,4.0);
+    glVertex2f(-9.0,10.0);
+    glVertex2f(-10.0,10.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(252, 149, 183);
+
+    glVertex2f(9.0,-8.0);
+    glVertex2f(10.0,-8.0);
+    glVertex2f(10.0,6.0);
+    glVertex2f(9.0,6.0);
+    glEnd();
+
+    //**************Light 01*******************
+    glBegin(GL_POLYGON);
+    glColor3ub(158, 152, 162);
+
+    glVertex2f(-11.0,10.0);
+    glVertex2f(-8.0,10.0);
+    glVertex2f(-8.0,16.0);
+    glVertex2f(-11.0,16.0);
+
+    glEnd();
+
+    //*****************Red LIGHT*******************
+    glBegin(GL_POLYGON);
+    glColor3ub(255, 0, 0);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.85;
+        float x = -9.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    //*****************Yellow LIGHT*******************
+    glBegin(GL_POLYGON);
+    glColor3ub(247, 255, 0 );
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.85;
+        float x = -9.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 13.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    //***************** LIGHT*******************
+    glBegin(GL_POLYGON);
+    glColor3ub(31, 255, 0  );
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.85;
+        float x = -9.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 11.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+
+
+
+    //**************Light 02*******************
+    glBegin(GL_POLYGON);
+    glColor3ub(158, 152, 162);
+
+    glVertex2f(8.0,6.0);
+    glVertex2f(11.0,6.0);
+    glVertex2f(11.0,12.0);
+    glVertex2f(8.0,12.0);
+    glEnd();
+//*****************Red LIGHT*******************
+    glBegin(GL_POLYGON);
+    glColor3ub(255, 0, 0);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.85;
+        float x = 9.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 11.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    //*****************Yellow LIGHT*******************
+    glBegin(GL_POLYGON);
+    glColor3ub(247, 255, 0 );
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.85;
+        float x = 9.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 9.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    //***************** LIGHT*******************
+    glBegin(GL_POLYGON);
+    glColor3ub(31, 255, 0  );
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.85;
+        float x = 9.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 7.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+
+
+
+}
+void display()
+{
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    Traffic();
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutCreateWindow("OpenGL Setup Test");
+    glutInitWindowSize(1000,1000);
+    gluOrtho2D(-20,20,-20,20);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
+
+***************************For Design perfect shape Circle**************************************
+
+ glBegin(GL_POLYGON);
+    glColor3ub(247, 255, 0 ); // Yellow color
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0; 
+        float radius = 0.85;
+        float x = 9.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 9.0 + radius * sin(angle); 
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+****************************************NIght Village******************************************
+
+#include<windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+void Night_Village()
+{
+
+    //land
+    glBegin(GL_POLYGON);
+    glColor3ub(28, 137, 41  );
+
+    glVertex2f(-24.0,-20.0);
+    glVertex2f(24.0,-20.0);
+    glVertex2f(24.0,0.0);
+    glVertex2f(-24.0,0.0);
+
+    glEnd();
+    //river
+    glBegin(GL_POLYGON);
+    glColor3ub(12, 226, 213);
+
+    glVertex2f(-24.0,0.0);
+    glVertex2f(24.0,0.0);
+    glVertex2f(24.0,8.0);
+    glVertex2f(-24.0,8.0);
+
+    glEnd();
+
+    //2nd land
+    glBegin(GL_POLYGON);
+    glColor3ub(28, 137, 41  );
+
+    glVertex2f(-24.0,8.0);
+    glVertex2f(24.0,8.0);
+    glVertex2f(24.0,12.0);
+    glVertex2f(-24.0,12.0);
+
+    glEnd();
+    // sky
+    glBegin(GL_POLYGON);
+    glColor3ub(0, 0, 0);
+
+    glVertex2f(-24.0,12.0);
+    glVertex2f(24.0,12.0);
+    glVertex2f(24.0,24.0);
+    glVertex2f(-24.0,24.0);
+
+    glEnd();
+
+    //MOon
+    glBegin(GL_POLYGON);
+    glColor3ub(243, 238, 235);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 3.0;
+        float x = 5.0 + radius * cos(angle);
+        float y = 17.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+    //Star
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -3.0 + radius * cos(angle);
+        float y = 19.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -2.0 + radius * cos(angle);
+        float y = 13.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -1.0 + radius * cos(angle);
+        float y = 18.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+
+
+
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -10.0 + radius * cos(angle);
+        float y = 14.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -9.0 + radius * cos(angle);
+        float y = 22.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -8.0 + radius * cos(angle);
+        float y = 20.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -10.0 + radius * cos(angle);
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = 9.0 + radius * cos(angle);
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = 12.0 + radius * cos(angle);
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = 0.0 + radius * cos(angle);
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = 20.0 + radius * cos(angle);
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -16.0 + radius * cos(angle);
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -20.0 + radius * cos(angle);
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -15.0 + radius * cos(angle);
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(205, 195, 190);
+    for (int i = 0; i < 360; i++)
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 0.08;
+        float x = -16.0 + radius * cos(angle);
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+
+
+
+
+    //village home body
+    glBegin(GL_POLYGON);
+    glColor3ub(227, 225, 223  );
+
+    glVertex2f(-16.0,-12.0);
+    glVertex2f(-4.0,-12.0);
+    glVertex2f(-4.0,8.0);
+    glVertex2f(-16.0,8.0);
+
+    glEnd();
+    // windows
+
+    glBegin(GL_POLYGON);
+    glColor3ub(181, 82, 8   );
+
+    glVertex2f(-16.0,-4.0);
+    glVertex2f(-13.0,-4.0);
+    glVertex2f(-13.0,0.0);
+    glVertex2f(-16.0,0.0);
+
+    glEnd();
+
+
+
+
+    //door
+    glBegin(GL_POLYGON);
+    glColor3ub(181, 82, 8  );
+
+    glVertex2f(-11.0,-12.0);
+    glVertex2f(-7.0,-12.0);
+    glVertex2f(-7.0,0.0);
+    glVertex2f(-11.0,0.0);
+
+    glEnd();
+
+    //head
+    glBegin(GL_TRIANGLES);
+    glColor3ub(181, 82, 8 );
+
+    glVertex2f(-16.0,8.0);
+    glVertex2f(-4.0,8.0);
+    glVertex2f(-10.0,14.0);
+
+    glEnd();
+
+    //2nd village home body
+    glBegin(GL_POLYGON);
+    glColor3ub(227, 225, 223  );
+
+    glVertex2f(16.0,-12.0);
+    glVertex2f(4.0,-12.0);
+    glVertex2f(4.0,8.0);
+    glVertex2f(16.0,8.0);
+
+    glEnd();
+    // windows
+    glBegin(GL_POLYGON);
+    glColor3ub(181, 82, 8   );
+
+    glVertex2f(16.0,-4.0);
+    glVertex2f(13.0,-4.0);
+    glVertex2f(13.0,0.0);
+    glVertex2f(16.0,0.0);
+
+    glEnd();
+    //door
+    glBegin(GL_POLYGON);
+    glColor3ub(181, 82, 8  );
+
+    glVertex2f(11.0,-12.0);
+    glVertex2f(7.0,-12.0);
+    glVertex2f(7.0,0.0);
+    glVertex2f(11.0,0.0);
+
+    glEnd();
+
+
+    //head
+    glBegin(GL_TRIANGLES);
+    glColor3ub(181, 82, 8 );
+
+    glVertex2f(16.0,8.0);
+    glVertex2f(4.0,8.0);
+    glVertex2f(10.0,14.0);
+
+    glEnd();
+
+}
+
+
+
+void display()
+{
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    Night_Village();
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutCreateWindow("OpenGL Setup Test");
+
+    glutInitWindowSize(1000, 1000);
+
+    gluOrtho2D(-20,20,-20,20);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
+
+
+
+*******************************Day village*****************************
+#include<windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+void Night_Village()
+{
+
+    //land
+    glBegin(GL_POLYGON);
+    glColor3ub(28, 137, 41  );
+
+    glVertex2f(-24.0,-20.0);
+    glVertex2f(24.0,-20.0);
+    glVertex2f(24.0,0.0);
+    glVertex2f(-24.0,0.0);
+
+    glEnd();
+  //river
+     glBegin(GL_POLYGON);
+    glColor3ub(12, 226, 213);
+
+    glVertex2f(-24.0,0.0);
+    glVertex2f(24.0,0.0);
+    glVertex2f(24.0,8.0);
+    glVertex2f(-24.0,8.0);
+
+    glEnd();
+
+     //2nd land
+    glBegin(GL_POLYGON);
+    glColor3ub(28, 137, 41  );
+
+    glVertex2f(-24.0,8.0);
+    glVertex2f(24.0,8.0);
+    glVertex2f(24.0,12.0);
+    glVertex2f(-24.0,12.0);
+
+    glEnd();
+    // sky
+    glBegin(GL_POLYGON);
+    glColor3ub(12, 226, 213);
+
+    glVertex2f(-24.0,12.0);
+    glVertex2f(24.0,12.0);
+    glVertex2f(24.0,24.0);
+    glVertex2f(-24.0,24.0);
+
+    glEnd();
+
+      //Sun
+    glBegin(GL_POLYGON);
+    glColor3ub(225, 86,7); // Sun
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 3.0;
+        float x = 5.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+    //Cloud
+     glBegin(GL_POLYGON);
+      glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.;
+        float x = -3.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 18.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+      glBegin(GL_POLYGON);
+     glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.5;
+        float x = -2.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 18.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+      glBegin(GL_POLYGON);
+    glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.;
+        float x = -1.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 18.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+    //2nd cloud
+
+
+     glBegin(GL_POLYGON);
+      glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.;
+        float x = -10.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 20.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+      glBegin(GL_POLYGON);
+     glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.5;
+        float x = -9.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 20.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+      glBegin(GL_POLYGON);
+    glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.;
+        float x = -8.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 20.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+    //3rd cloud
+
+     //Cloud
+     glBegin(GL_POLYGON);
+      glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.;
+        float x = 10.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+      glBegin(GL_POLYGON);
+     glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.5;
+        float x = 9.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+      glBegin(GL_POLYGON);
+    glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.;
+        float x = 8.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+     //4th Cloud
+     glBegin(GL_POLYGON);
+      glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.;
+        float x = 18.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+      glBegin(GL_POLYGON);
+     glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.5;
+        float x = 17.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+      glBegin(GL_POLYGON);
+    glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.;
+        float x = 16.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+     //5th Cloud
+     glBegin(GL_POLYGON);
+      glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.;
+        float x = -18.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+      glBegin(GL_POLYGON);
+     glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.5;
+        float x = -17.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+      glBegin(GL_POLYGON);
+    glColor3ub(255, 255, 255);
+    for (int i = 0; i < 360; i++)    // Use 360 degrees for a full circle
+    {
+        float angle = i * 3.1416 / 180.0;
+        float radius = 1.;
+        float x = -16.0 + radius * cos(angle);  // Centered at (9.0, 11.0)
+        float y = 15.0 + radius * sin(angle);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+
+
+
+
+    //village home body
+    glBegin(GL_POLYGON);
+    glColor3ub(227, 225, 223  );
+
+    glVertex2f(-16.0,-12.0);
+    glVertex2f(-4.0,-12.0);
+    glVertex2f(-4.0,8.0);
+    glVertex2f(-16.0,8.0);
+
+    glEnd();
+    // windows
+
+   glBegin(GL_POLYGON);
+    glColor3ub(181, 82, 8   );
+
+    glVertex2f(-16.0,-4.0);
+    glVertex2f(-13.0,-4.0);
+    glVertex2f(-13.0,0.0);
+    glVertex2f(-16.0,0.0);
+
+    glEnd();
+
+
+
+
+    //door
+    glBegin(GL_POLYGON);
+    glColor3ub(181, 82, 8  );
+
+    glVertex2f(-11.0,-12.0);
+    glVertex2f(-7.0,-12.0);
+    glVertex2f(-7.0,0.0);
+    glVertex2f(-11.0,0.0);
+
+    glEnd();
+
+    //head
+    glBegin(GL_TRIANGLES);
+    glColor3ub(181, 82, 8 );
+
+    glVertex2f(-16.0,8.0);
+    glVertex2f(-4.0,8.0);
+    glVertex2f(-10.0,14.0);
+
+    glEnd();
+
+    //2nd village home body
+    glBegin(GL_POLYGON);
+    glColor3ub(227, 225, 223  );
+
+    glVertex2f(16.0,-12.0);
+    glVertex2f(4.0,-12.0);
+    glVertex2f(4.0,8.0);
+    glVertex2f(16.0,8.0);
+
+    glEnd();
+    // windows
+      glBegin(GL_POLYGON);
+    glColor3ub(181, 82, 8   );
+
+    glVertex2f(16.0,-4.0);
+    glVertex2f(13.0,-4.0);
+    glVertex2f(13.0,0.0);
+    glVertex2f(16.0,0.0);
+
+    glEnd();
+    //door
+    glBegin(GL_POLYGON);
+    glColor3ub(181, 82, 8  );
+
+    glVertex2f(11.0,-12.0);
+    glVertex2f(7.0,-12.0);
+    glVertex2f(7.0,0.0);
+    glVertex2f(11.0,0.0);
+
+    glEnd();
+
+
+    //head
+    glBegin(GL_TRIANGLES);
+    glColor3ub(181, 82, 8 );
+
+    glVertex2f(16.0,8.0);
+    glVertex2f(4.0,8.0);
+    glVertex2f(10.0,14.0);
+
+    glEnd();
+}
+
+
+
+void display()
+{
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    Night_Village();
+
+    glFlush();
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutCreateWindow("OpenGL Setup Test");
+
+    glutInitWindowSize(1000, 1000);
+
+    gluOrtho2D(-20,20,-20,20);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
+
+*********************************************A Object move round and round********************************
+
+#include <iostream>
+#include<GL/gl.h>
+#include <GL/glut.h>
+#include <windows.h>
+using namespace std;
+
+float _angle1 = 0.0f;
+void drawScene()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3d(1,0,0);
+    glLoadIdentity(); //Reset the drawing perspective
+    glMatrixMode(GL_MODELVIEW);
+
+    glPushMatrix();
+    glTranslatef(0.3,0.1,0.0);
+    glRotatef(_angle1, 0.0f, 0.0f,1.0f);
+    glTranslatef(-0.3,-0.1,0.0);
+    glBegin(GL_QUADS);
+    glVertex2f(0.1f, 0.0f);
+    glVertex2f(0.5f, 0.0f);
+    glVertex2f(0.5f, 0.2f);
+    glVertex2f(0.1f, 0.2);
+    glEnd();
+    glPopMatrix();
+    glutSwapBuffers();
+}
+
+void update(int value)
+{
+
+    _angle1+=2.0f;
+    glutPostRedisplay(); //Notify GLUT that the display has change
+    glutTimerFunc(20, update, 0); //Notify GLUT to call update again in 25 milliseconds
+}
+
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowSize(800, 800);
+    glutCreateWindow("Transformation");
+    glutDisplayFunc(drawScene);
+    glutTimerFunc(20, update, 0); //Add a timer
+    glutMainLoop();
+    return 0;
+}
+
+****************************Final*****************************************************
+**********************move Two box**************************************
+
+#include <iostream>
+#include <GL/gl.h>
+#include <GL/glut.h>
+
+using namespace std;
+
+float moveBox1 = 0.0f;
+float moveBox2 = 0.0f;
+
+void drawScene() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // Draw Box 1 (moving to the right)
+    glColor3d(1, 0, 0);
+    glLoadIdentity();
+    glTranslatef(moveBox1, 0.0f, 0.0f);
+    glPushMatrix();
+    glBegin(GL_QUADS);
+    glVertex2f(0.1f, -0.5f);
+    glVertex2f(0.5f, -0.5f);
+    glVertex2f(0.5f, -0.3f);
+    glVertex2f(0.1f, -0.3f);
+    glEnd();
+    glPopMatrix();
+
+    // Draw Box 2 (moving to the left)
+    glColor3d(0, 0, 1);
+    glLoadIdentity();
+    glTranslatef(moveBox2, 0.0f, 0.0f);
+    glPushMatrix();
+    glBegin(GL_QUADS);
+    glVertex2f(-0.5f, 0.5f);
+    glVertex2f(-0.1f, 0.5f);
+    glVertex2f(-0.1f, 0.3f);
+    glVertex2f(-0.5f, 0.3f);
+    glEnd();
+    glPopMatrix();
+
+    glutSwapBuffers();
+}
+
+void update(int value) {
+    moveBox1 += 0.02;
+    moveBox2 -= 0.02;
+
+    if (moveBox1 > 1.3) {
+        moveBox1 = -1.0;
+    }
+
+    if (moveBox2 < -1.3) {
+        moveBox2 = 1.0;
+    }
+
+    glutPostRedisplay();
+    glutTimerFunc(20, update, 0);
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowSize(800, 800);
+    glutCreateWindow("Opposite Direction Animation");
+    glutDisplayFunc(drawScene);
+    gluOrtho2D(-2, 2, -2, 2);
+    glutTimerFunc(20, update, 0);
+    glutMainLoop();
+
+    return 0;
+}
+
+*******************************************car movement****************************************
+
+#include <iostream>
+#include <GL/gl.h>
+#include <GL/glut.h>
+#include <cmath>
+
+using namespace std;
+
+float carPosX = 0.5f;
+float wheelRotation = 0.5f;
+
+void drawCar() {
+    // Draw car body
+    glColor3d(255, 0, 0 );
+    glLoadIdentity();
+    glTranslatef(carPosX, 0.0f, 0.0f);
+    glPushMatrix();
+    glBegin(GL_QUADS);
+    glVertex2f(-0.6f, -0.2f);
+    glVertex2f(0.6f, -0.2f);
+    glVertex2f(0.6f, 0.2f);
+    glVertex2f(-0.6f, 0.2f);
+    glEnd();
+    glPopMatrix();
+
+    // Draw wheels
+    glColor3d(176, 168, 168 );
+    glPushMatrix();
+    glTranslatef(-0.4f, -0.3f, 0.0f);
+    glRotatef(wheelRotation, 0.0f, 0.0f, 1.0f);
+    glutSolidTorus(0.05, 0.1, 30, 30);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.4f, -0.3f, 0.0f);
+    glRotatef(wheelRotation, 0.0f, 0.0f, 1.0f);
+    glutSolidTorus(0.05, 0.1, 30, 30);
+    glPopMatrix();
+}
+
+void drawScene() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    drawCar();
+
+    glutSwapBuffers();
+}
+
+void update(int value) {
+    carPosX += 0.02;
+    wheelRotation += 5.0;
+
+    if (carPosX > 2.0) {
+        carPosX = -2.0;
+    }
+
+    glutPostRedisplay();
+    glutTimerFunc(20, update, 0);
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowSize(800, 800);
+    glutCreateWindow("Rotating Wheels Car");
+    glutDisplayFunc(drawScene);
+    gluOrtho2D(-2, 2, -2, 2);
+    glutTimerFunc(20, update, 0);
+    glutMainLoop();
+
+    return 0;
+}
+
+****************************************windmill with rotating blades*****************************
+
+#include<windows.h>
+#include <GL/glut.h>
+#include <math.h>
+
+using namespace std;
+
+float bladeRotation = 0.0f;
+
+void drawBlade() {
+    glColor3d(255, 255, 255 );
+    glPushMatrix();
+    glRotatef(bladeRotation, 0.0f, 0.0f, 1.0f);
+    glBegin(GL_QUADS);
+    glVertex2f(-0.1f, 0.0f);
+    glVertex2f(0.1f, 0.0f);
+    glVertex2f(0.02f, 1.0f);
+    glVertex2f(-0.02f, 1.0f);
+    glEnd();
+    glPopMatrix();
+}
+
+void drawWindmill() {
+    // Draw windmill base
+    glColor3d(0.5, 0.5, 0.5);
+    glBegin(GL_QUADS);
+    glVertex2f(-0.1f, -2.0f);
+    glVertex2f(0.1f, -2.0f);
+    glVertex2f(0.1f, 0.0f);
+    glVertex2f(-0.1f, 0.0f);
+    glEnd();
+
+    // Draw blades
+    for (int i = 0; i < 4; ++i) {
+        glPushMatrix();
+        glRotatef(i * 90.0f, 0.0f, 0.0f, 1.0f);
+        drawBlade();
+        glPopMatrix();
+    }
+}
+
+void drawScene() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    drawWindmill();
+
+    glutSwapBuffers();
+}
+
+void update(int value) {
+    bladeRotation += 5.0;
+
+    glutPostRedisplay();
+    glutTimerFunc(20, update, 0);
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowSize(800, 800);
+    glutCreateWindow("Rotating Windmill Blades");
+    glutDisplayFunc(drawScene);
+    gluOrtho2D(-2, 2, -2, 2);
+    glutTimerFunc(20, update, 0);
+    glutMainLoop();
+
+    return 0;
+}
+
+
+
+
+
+
+
